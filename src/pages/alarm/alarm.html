@@ -1,0 +1,131 @@
+<!--
+  Generated template for the AlarmPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header no-border>
+  <ion-toolbar color="primary" #header>
+    <ion-buttons start>
+      <button ion-button icon-only clear navPop >
+        <ion-icon name="arrow-back" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>报警信息</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="content"  class="bg-color"   #content>
+ 	<!-- <div id="content" style="height:auto;width:100%;padding:10px 10px 10px 10px;" > -->
+
+			<ion-card *ngFor="let itm of listData" no-border >
+				<ion-item>
+					<ion-avatar item-left>
+					  <img src="./assets/icon/head.png">
+					</ion-avatar>
+					<h2 style="padding-top:4px;">{{itm.worker?.worker_name}}</h2>
+					<ion-note>{{itm.message.message_time}}</ion-note>
+				</ion-item>
+				<!-- <img src="./assets/icon/mapp.png">  -->
+				<ion-card-content>
+					<p>{{itm.message.message_note}}</p>
+				</ion-card-content>
+
+			<!-- <ion-row>
+			<ion-col>
+			  <button ion-button icon-left clear small>
+			    <ion-icon name="thumbs-up"></ion-icon>
+			    <div>{{itm.message?.message_status}}</div>
+			  </button>
+			</ion-col>
+			<ion-col>
+			  <button ion-button icon-left clear small>
+			    <ion-icon name="text"></ion-icon>
+			    <div>4 Comments</div>
+			  </button>
+			</ion-col>
+			<ion-col center text-center>
+			  <ion-note>
+			    11h ago
+			  </ion-note>
+			</ion-col>
+			</ion-row> -->
+			<!-- <button ion-item>
+		      <ion-icon name="cafe" item-start></ion-icon>
+		     	{{itm.police?.police_name}}
+		    </button>  -->
+		    <ion-row>
+		      <ion-col>
+		        <button ion-button icon-left clear small  (click)="getInfo(police_code)" >
+		          <ion-icon name="call" color="dark" ></ion-icon>
+		          <input type="hidden" value="{{itm.message.message_code}}" #msgcode/>
+		          <input type="hidden" value="{{itm.police?.police_code}}" #police_code/>
+		          <div style="color:gray;" #rec_info > {{itm.police?.police_name}}&nbsp;&nbsp;&nbsp;</div>
+		        </button>
+		      </ion-col>
+		      <ion-col center text-center icon-left clear small >
+		        <button ion-button icon-left clear small style="color:gray;">
+		        <ion-icon name="time" ></ion-icon>
+		        {{itm.message.message_time}}
+		        </button>
+		      </ion-col>
+		    </ion-row>
+		</ion-card>
+	<!-- </div> -->
+</ion-content>
+<ion-footer class="ipt-bottom" id="footer" style="padding:0px 0px 0px 0px;" #footer>
+    <div id="inf-div" style="min-height:50px;max-height:150px;height:auto;width:100%;border-bottom:1px solid #DDDDDD;">
+    	<div class="ipt-button-1" #a_sw>
+	   	   <ion-buttons large>
+	        <button icon-only item-left  clear ion-button   inline color="dark" (click)="gosound(a_sw,b_sw,words,sound)" >
+	   	      <ion-icon name="mic" style="padding:3px 3px 3px 3px;" ></ion-icon>
+	   	    </button>
+	   	    </ion-buttons>
+	    </div>
+	    <div class="ipt-button-1" style="display:none;" #b_sw>
+	   	   <ion-buttons large>
+	        <button icon-only item-left  clear ion-button   inline color="dark" (click)="gowrite(a_sw,b_sw,words,sound)" >
+	   	      <ion-icon name="keypad" style="padding:3px 3px 3px 3px;" #iconswitch></ion-icon>
+	   	    </button>
+	   	    </ion-buttons>
+	    </div>
+	    <div class="ipt-input" #words>
+
+		   <!--  <ion-textarea  placeholder="请输入消息...."    #userinfo>  </ion-textarea>  -->
+		   <ion-textarea id="textarea"  placeholder="请输入文字消息" rows=1 cols=40 style='overflow:scroll;overflow-y:hidden;overflow-x:hidden;border-bottom:1px solid #DDDDDD;max-height:120px;' #userinfo></ion-textarea>
+	    </div>
+	    <div class="ipt-input"  style="display:none;" #sound >
+	    	<div style="margin:5px auto;width:80%;height:40px;padding-top:3px;text-align:center;" >
+	    		<button ion-button (click)="Rec()"   [color]="btnRecColor" style="height:30px;" round block >{{btnRecText}}</button>
+			  </div>
+	    </div>
+	   	<div class="ipt-button" >
+	   	   <ion-buttons large>
+           <button icon-only item-left (click)="sendMsg(userinfo)"   clear ion-button   inline color="secondary" >
+	   	      <ion-icon name="paper-plane" style="padding:3px 3px 3px 3px;"></ion-icon>
+	   	    </button>
+	   	    <button  item-right  icon-only (click)="SetHeight(footer)"  clear ion-button    inline color="dark"  >
+	   	      <ion-icon name="add-circle" style="padding:3px 3px 3px 3px;"></ion-icon>
+	   	    </button>
+
+	      </ion-buttons>
+	   </div>
+
+    </div>
+    <div style="height:140px;width:100%;">
+    	<ion-buttons large>
+        <button ion-button icon-only round clear large inline (click)="takePhoto()" color="dark" >
+          <ion-icon name="camera" ></ion-icon>
+        </button>
+    		<button ion-button icon-only round clear large inline (click)="PhotoPick()" color="dark" >
+    			<ion-icon  name="images" ></ion-icon>
+    		</button>
+    		<button ion-button icon-only round clear large inline (click)="captureVideo()" color="dark" >
+    			<ion-icon name="videocam"  ></ion-icon>
+    		</button>
+    	</ion-buttons>
+    </div>
+</ion-footer>
+
+

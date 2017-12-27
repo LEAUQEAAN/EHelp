@@ -1,0 +1,31 @@
+<!--
+  Generated template for the AlterpwdPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header no-border>
+  <ion-toolbar color="primary" #header>
+    <ion-buttons start>
+      <button ion-button icon-only clear navPop >
+        <ion-icon name="arrow-back" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>修改密码</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+    <ion-item>
+      <ion-input type="password" placeholder="请输入旧密码" #oldPwd></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password"  placeholder="请输入新密码" #newPwd1></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password"    placeholder="请确认新密码" #newPwd2></ion-input>
+    </ion-item>
+  <button ion-button block color="positive" (click)=AlterPwd(oldPwd,newPwd1,newPwd2)  style="margin-top:10px;font-size:17px;" >
+    确认修改
+  </button>
+</ion-content>

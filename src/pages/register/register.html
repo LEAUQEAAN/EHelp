@@ -1,0 +1,75 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+    <ion-toolbar color="primary" #header>
+      <ion-buttons start >
+        <button ion-button icon-only clear navPop >
+          <ion-icon name="arrow-back" ></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title class="m-title" >
+          用户注册
+      </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-header no-border>
+  <ion-toolbar color="primary" #header>
+    <ion-buttons start>
+      <button ion-button icon-only clear navPop >
+        <ion-icon name="arrow-back" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>用户注册</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item>
+      <ion-label  >账号</ion-label>
+      <ion-input type="text" placeholder="请输入身份证号" #usercode></ion-input>
+      <button  fixed item-right ion-button inline small color="danger" (click)="Check(usercode)" >
+        检测
+      </button>
+     </ion-item>
+    <!-- <ion-item style="background-color:#F0F0F0;">
+      <ion-label >请先检测你是否有资格注册</ion-label>
+      <button  fixed item-right ion-button inline small color="danger" (click)="Check(usercode)" >
+        检测
+      </button>
+    </ion-item> -->
+    <ion-item>
+      <ion-label >姓名</ion-label>
+      <ion-input type="text" readonly [(ngModel)]="uname" placeholder="请输入姓名" #username></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label  >性别</ion-label>
+      <ion-input type="text" readonly [(ngModel)]="usex" placeholder="请输入性别" #usersex></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  >单位</ion-label>
+      <ion-input type="text" readonly [(ngModel)]="scenic"  placeholder="请输入单位" #userdept></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  >手机</ion-label>
+      <ion-input type="text" readonly [(ngModel)]="uphone" placeholder="请输入手机号" #userphone></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  >密码</ion-label>
+      <ion-input type="password" placeholder="请输入密码" #password1></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  >密码</ion-label>
+      <ion-input type="password" placeholder="请输入密码" #password2></ion-input>
+    </ion-item>
+
+  <button ion-button block color="positive" (click)="Register(usercode,username,usersex,userdept,userphone,password1,password2)" style="margin-top:10px;font-size:17px;" >
+    立即注册
+  </button>
+</ion-content>
+

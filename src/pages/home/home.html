@@ -1,0 +1,51 @@
+
+
+<!-- <ion-header>
+  <div style="height:30px;width:100%;z-index:9999;position:absolute;">
+      <div style="height:30px;width:80%;" id="place" #place>
+      </div>
+      <div style="height:30px;width:20%;"  >
+        <button ion-button (click)="mypos()" >我的位置:</button>
+      </div>
+     
+  </div>
+</ion-header> -->
+<!-- <ion-header no-border> 
+    <ion-navbar color="primary" #header> 
+      <ion-buttons (click)="alarm()"  large style="float:left;width:10%;" >
+        <button ion-button icon-only clear  >
+          <ion-icon large ios="ios-alert" md="md-alert"></ion-icon>
+        </button>
+      </ion-buttons>    
+  </ion-navbar>
+</ion-header>  -->
+<ion-content color="light"> 
+  
+   <div id="allmap" #allmap style="height:100%;width:100%;" > 
+   </div>
+   <div style="height:30px;width:100%;z-index:9999;position:absolute;margin-top:-15%;"> 
+    <!-- <i class="icon ion-location" (click)="mypos()" ></i>  -->
+    <!-- <button ion-button (click)="mypos()"  style="height:25px;width:50px;float:left;"  >刷新</button> -->
+    <!-- <ion-buttons start  > -->
+      <!-- <button ion-button color="light" class="pos-btn"  small (click)="mypos()" icon-only>
+        <ion-icon name="pin"></ion-icon>
+      </button> -->
+      <div color="light" (click)="alarm()"  class="_btn" > 
+            <ion-icon large ios="ios-chatboxes" md="md-chatboxes"></ion-icon> &nbsp;&nbsp;立即报警
+      </div>
+      
+      <div style="display:none;" class="addrinfo" id="place" #place></div>
+   <!--  </ion-buttons> -->
+  </div> 
+
+   
+<!--    <div id="helpinfo" style="height:18%;width:100%;" >
+   <div class="addrinfo">
+      <ion-icon name="pin"  style="float:left;"></ion-icon>
+      <div  style="float:left;" id="place" #place></div>
+   </div>
+   <button ion-item  color="light" inline    (click)="mypos()" >
+     <ion-icon name="pin"></ion-icon>立即报警
+   </button>  
+</div> -->
+</ion-content> 
